@@ -13,4 +13,9 @@
     <color name="background_color">#0f4c81</color>
     <color name="button_color">#71c3e3</color>
     <color name="tab_color"></color>
+
+<!--    xd colors-->
+    <color name="white">#FFFFFF</color>
+    <color name="cancel">#C2B4B4</color>
+
 </resources>
