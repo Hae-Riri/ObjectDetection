@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "405611809069",
+    "firebase_url": "https://suri-d1120.firebaseio.com",
+    "project_id": "suri-d1120",
+    "storage_bucket": "suri-d1120.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:405611809069:android:8025268f8a5601b92faba4",
+        "android_client_info": {
+          "package_name": "org.tensorflow.lite.examples.detection"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "405611809069-m4gn8vkbcdgufbdd1cp2m1025l25qf4b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPqvpE3eZIO0OGQYT3d2WMgbXI5dlyN0s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "405611809069-m4gn8vkbcdgufbdd1cp2m1025l25qf4b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
