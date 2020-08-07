@@ -1,53 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
     <data>
 
     </data>
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout
+        android:layout_width="565px"
+        android:layout_height="138px"
         android:orientation="horizontal"
-    android:layout_gravity="center|top"
+        android:layout_gravity="center|top"
         android:paddingLeft="30dp"
         android:paddingTop="15dp"
         android:paddingRight="20dp"
         android:paddingBottom="15dp"
-        android:background="@android:color/white"
+        android:background="@drawable/phone_border"
         android:gravity="center">
 
 
-
         <TextView
-            android:layout_gravity="center"
             android:id="@+id/name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="3"
-            android:textAlignment="center"
-            android:textSize="16dp"
-            tools:text="어해림"/>
+            android:textAlignment="textStart"
+            android:textSize="40px"
+            android:textStyle="bold"
+            tools:text="어해림" />
 
         <TextView
-            android:layout_gravity="center"
             android:id="@+id/phone"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="6"
-            android:textAlignment="center"
-            android:textSize="16dp"
-            tools:text="010-5768-5933"/>
-    <TextView
-        android:id="@+id/delete"
-        android:layout_gravity="center"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:textSize="16dp"
-        android:textStyle="bold"
-        android:text=":"
-        android:gravity="center"
-        android:textColor="@android:color/holo_red_light"/>
+            android:textAlignment="textEnd"
+            android:textSize="40px"
+            tools:text="010-5768-5933" />
     </LinearLayout>
 </layout>

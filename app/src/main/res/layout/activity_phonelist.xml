@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_color">
+    android:background="@color/white">
 
     <ImageView
         android:id="@+id/backBtn1"
@@ -16,9 +16,9 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewList"
-        android:layout_width="300dp"
+        android:layout_width="565px"
         android:layout_height="400dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,36 +28,26 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:text="연략처 목록"
-        android:textColor="#FFFFFF"
-        android:textSize="40sp"
+        android:layout_marginTop="127dp"
+        android:text="길게 누르면 삭제됩니다"
+        android:textColor="#989090"
+        android:textSize="40px"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
-        android:layout_width="406dp"
-        android:layout_height="157dp"
-        android:layout_marginTop="5dp"
-        android:orientation="horizontal"
+    <Button
+        android:id="@+id/addBtn"
+        android:layout_width="141px"
+        android:layout_height="141px"
+        android:layout_marginBottom="81dp"
+        android:backgroundTint="#97DBD8"
+        android:textColor="@color/background_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerViewList">
-
-        <Button
-            android:id="@+id/addBtn"
-            android:layout_width="52dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="60dp"
-            android:layout_marginTop="15dp"
-            android:backgroundTint="#F1C40F"
-            android:text="+"
-            android:textColor="@color/background_color"
-            android:textSize="20sp" />
-    </LinearLayout>
+        android:background="@drawable/add_button_border"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
