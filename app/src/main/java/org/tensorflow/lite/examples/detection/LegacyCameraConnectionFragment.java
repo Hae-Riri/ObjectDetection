@@ -86,7 +86,7 @@ public class LegacyCameraConnectionFragment extends Fragment {
             Size previewSize =
                 CameraConnectionFragment.chooseOptimalSize(
                     sizes, desiredSize.getWidth(), desiredSize.getHeight());
-            parameters.setPreviewSize(previewSize.getWidth(), previewSize.getHeight());
+            parameters.setPreviewSize(previewSize.getWidth(), previewSize.getHeight());//previewSize.getHeight()
             camera.setDisplayOrientation(90);
             camera.setParameters(parameters);
             camera.setPreviewTexture(texture);

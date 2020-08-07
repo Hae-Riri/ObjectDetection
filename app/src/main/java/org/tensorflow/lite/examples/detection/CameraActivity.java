@@ -149,24 +149,24 @@ public abstract class CameraActivity extends AppCompatActivity
     accelerormeterSensor=sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
 
 
-    Button emergency=(Button)findViewById(R.id.emergency);
-    emergency.setOnClickListener(new View.OnClickListener() {
+    Button map=(Button)findViewById(R.id.map);
+    map.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
-        Intent intent = new Intent(CameraActivity.this, EmergencyActivity.class);
+        Intent intent = new Intent(CameraActivity.this, MainGuardActivity.class);
         startActivity(intent);
       }
     });
 
     //tts
-    tts = new TextToSpeech(mContext, new TextToSpeech.OnInitListener() {
-      @Override
-      public void onInit(int i) {
-        if(i !=TextToSpeech.ERROR)    {
-          tts.setLanguage(Locale.KOREAN);
-        }
-      }
-    });
+//    tts = new TextToSpeech(mContext, new TextToSpeech.OnInitListener() {
+//      @Override
+//      public void onInit(int i) {
+//        if(i !=TextToSpeech.ERROR)    {
+//          tts.setLanguage(Locale.KOREAN);
+//        }
+//      }
+//    });
 //
 //    Boolean isLaptop = PrefrenceManager.getBoolean(mContext,"laptop");
 //    if(isLaptop){
@@ -309,7 +309,7 @@ public abstract class CameraActivity extends AppCompatActivity
       sensorManager.registerListener(this,accelerormeterSensor,SensorManager.SENSOR_DELAY_GAME);
     super.onStart();
 
-    tts.speak("노트북",TextToSpeech.QUEUE_FLUSH,null);
+
   }
 
 

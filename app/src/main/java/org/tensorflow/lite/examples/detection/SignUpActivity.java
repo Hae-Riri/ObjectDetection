@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -49,6 +50,16 @@ public class SignUpActivity extends AppCompatActivity {
         phone = (EditText) findViewById(R.id.userPhone);
         phone.addTextChangedListener(new PhoneNumberFormattingTextWatcher());  //자동 하이픈(-) 생성
         root=(LinearLayout)findViewById(R.id.root);
+        //뒤로가기
+        ImageView backBtn = (ImageView) findViewById(R.id.backBtn);
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(intent);
+            }
+        });
+
         // 회원가입 버튼
         Button signUpBtn = (Button)findViewById(R.id.doneSignUp);
         signUpBtn.setOnClickListener(new View.OnClickListener(){

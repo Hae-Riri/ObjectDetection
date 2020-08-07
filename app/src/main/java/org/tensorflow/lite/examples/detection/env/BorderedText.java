@@ -116,8 +116,7 @@ public class BorderedText{
       Log.e("TEXT","Watch Out!");
       str = "노트북";
       num++;
-//      PrefrenceManager.setBoolean(globalContext,"laptop",true);
-      sp.playAudio();
+//      sp.playAudio(); //잠시 테스트때문에 얘만 주석처리
     }
 
 //    boolean isLaptop = PrefrenceManager.getBoolean(globalContext,"laptop");
