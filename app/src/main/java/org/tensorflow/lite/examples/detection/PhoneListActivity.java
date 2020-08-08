@@ -94,6 +94,8 @@ public class PhoneListActivity extends AppCompatActivity {
         }));
 
     }
+
+    //길게누르면 삭제하는 부분
     public interface ClickLister{
         void onClick(View view, int position);
         void onLongClick(View view, int position);
@@ -204,7 +206,7 @@ public class PhoneListActivity extends AppCompatActivity {
                 .child(deleteNum).removeValue();
         //adapter.notifyDataSetChanged();
         setUser(currentUser);
-
+        Toast.makeText(getApplicationContext(),"삭제되었습니다.",Toast.LENGTH_SHORT).show();
 
     }
 
