@@ -119,25 +119,25 @@ public class BorderedText{
 
     //자동차
     pc = new PlayerCar(globalContext);
-    if(text.substring(0,3).equals("car")&&num<0){
+    if(text.substring(0,3).equals("car")&&num_car<0){
       Log.e("TEXT", "car! watch out!");
-      num++;
+      num_car++;
       pc.playAudio();
     }
 
     //사람
     pp = new PlayerPerson(globalContext);
-    if(text.substring(0,6).equals("person")&&num<0){
+    if(text.substring(0,6).equals("person")&&num_person<0){
       Log.e("TEXT", "person! watch out!");
-      num++;
+      num_person++;
       pp.playAudio();
     }
 
     //기둥
     ph = new PlayerHydrant(globalContext);
-    if(text.substring(0,4).equals("fire")&&num<0){
+    if(text.substring(0,4).equals("fire")&&num_fire<0){
       Log.e("TEXT", "fire hydrant! watch out!");
-      num++;
+      num_fire++;
       ph.playAudio();
     }
 
