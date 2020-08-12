@@ -1,4 +1,4 @@
-package org.tensorflow.lite.examples.detection.sos;
+package org.tensorflow.lite.examples.detection.detect;
 
 import android.content.Context;
 import android.media.AudioManager;
@@ -6,19 +6,21 @@ import android.media.MediaPlayer;
 
 import org.tensorflow.lite.examples.detection.R;
 
-public class SirenPlayer {
+public class PlayerCar {
+
     private Context mContext;
     private MediaPlayer mMediaPlayer;
     private AudioManager mAudioManager;
 
-    public SirenPlayer(Context context){
+    public PlayerCar(Context context){
         mContext = context;
-        mMediaPlayer = MediaPlayer.create(mContext, R.raw.car);
+        mMediaPlayer = MediaPlayer.create(mContext, R.raw.real_car);
         mAudioManager=(AudioManager)mContext.getSystemService(Context.AUDIO_SERVICE);
     }
+
     public void playAudio(){
         if(mMediaPlayer==null){
-            mMediaPlayer=MediaPlayer.create(mContext,R.raw.car);
+            mMediaPlayer=MediaPlayer.create(mContext,R.raw.real_car);
             mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC,9,0);
             mMediaPlayer.start();
         }else {

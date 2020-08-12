@@ -92,18 +92,6 @@ public abstract class CameraActivity extends AppCompatActivity
   private SensorManager sensorManager;
   private Sensor accelerormeterSensor;
 
-  private long lastTime;
-  private float speed;
-  private float lastX;
-  private float lastY;
-  private float lastZ;
-  private float x,y,z;
-
-  private static final int SHAKE_THRESHOLD =800;
-  private static final int DATA_X=SensorManager.DATA_X;
-  private static final int DATA_Y=SensorManager.DATA_Y;
-  private static final int DATA_Z = SensorManager.DATA_Z;
-
   private long mshakeTime;
   private static final int SHAKE_SKIP_TIME=500;
   private static final float SHAKE_THRESHOLD_GRAVITY=2.7F;
@@ -158,22 +146,6 @@ public abstract class CameraActivity extends AppCompatActivity
       }
     });
 
-    //tts
-//    tts = new TextToSpeech(mContext, new TextToSpeech.OnInitListener() {
-//      @Override
-//      public void onInit(int i) {
-//        if(i !=TextToSpeech.ERROR)    {
-//          tts.setLanguage(Locale.KOREAN);
-//        }
-//      }
-//    });
-//
-//    Boolean isLaptop = PrefrenceManager.getBoolean(mContext,"laptop");
-//    if(isLaptop){
-//      Log.e("shared laptop","true");
-//      tts.speak("노트북",TextToSpeech.QUEUE_FLUSH,null);
-//      PrefrenceManager.setBoolean(mContext,"laptop",false);
-//    }
 
   }
 

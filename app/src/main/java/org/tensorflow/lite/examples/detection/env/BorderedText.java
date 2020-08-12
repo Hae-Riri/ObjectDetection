@@ -15,7 +15,6 @@ limitations under the License.
 
 package org.tensorflow.lite.examples.detection.env;
 
-import android.app.Activity;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -28,12 +27,12 @@ import android.speech.tts.TextToSpeech;
 import android.util.Log;
 
 import org.tensorflow.lite.examples.detection.CameraActivity;
-import org.tensorflow.lite.examples.detection.PrefrenceManager;
-import org.tensorflow.lite.examples.detection.sos.SirenPlayer;
+import org.tensorflow.lite.examples.detection.detect.PlayerCar;
+import org.tensorflow.lite.examples.detection.detect.PlayerHydrant;
+import org.tensorflow.lite.examples.detection.detect.PlayerPerson;
+import org.tensorflow.lite.examples.detection.sos.ObjectPlayer;
 
-import java.util.Locale;
 import java.util.Vector;
-import static android.speech.tts.TextToSpeech.ERROR;
 
 /** A class that encapsulates the tedious bits of rendering legible, bordered text onto a canvas. */
 public class BorderedText{
@@ -45,8 +44,10 @@ public class BorderedText{
   public String str;
   private TextToSpeech tts;
 
-  public SirenPlayer sp;
-
+  public ObjectPlayer sp;
+  public PlayerCar pc;
+  public PlayerHydrant ph;
+  public PlayerPerson pp;
 
 
   /**
@@ -96,46 +97,49 @@ public class BorderedText{
     canvas.drawText(text, posX, posY, exteriorPaint);
     canvas.drawText(text, posX, posY, interiorPaint);
   }
+
   int num=-1;
+  int num_car = -1;
+  int num_fire = -1;
+  int num_person=-1;
+
   public void drawText(
       final Canvas canvas, final float posX, final float posY, String text, Paint bgPaint) {
 
     Context globalContext = CameraActivity.getContext();
 
-//    tts = new TextToSpeech(globalContext, new TextToSpeech.OnInitListener() {
-//      @Override
-//      public void onInit(int i) {
-//        if(i !=ERROR)    {
-//          tts.setLanguage(Locale.KOREAN);
-//        }
-//      }
-//    }
-    sp = new SirenPlayer(globalContext);
+    sp = new ObjectPlayer(globalContext);
     //특정 객체 인식부분
     if(text.substring(0,6).equals("laptop") && num<0){
       Log.e("TEXT","Watch Out!");
       str = "노트북";
       num++;
-//      sp.playAudio(); //잠시 테스트때문에 얘만 주석처리
+      sp.playAudio(); //잠시 테스트때문에 얘만 주석처리
     }
 
-//    boolean isLaptop = PrefrenceManager.getBoolean(globalContext,"laptop");
-//    boolean isSpeak=false;
-//
-//    if(isLaptop) {
-//      Log.e("shared laptop", "true");
-//      //tts.speak(str,TextToSpeech.QUEUE_FLUSH,null);
-//      PrefrenceManager.setBoolean(globalContext,"laptop",false);
-//
-//
-//      if(num==0) {
-//        num=1;
-//        sp.playAudio();
-//        isSpeak=true;
-//        //sp.stopAudio();
-//      }
+    //자동차
+    pc = new PlayerCar(globalContext);
+    if(text.substring(0,3).equals("car")&&num<0){
+      Log.e("TEXT", "car! watch out!");
+      num++;
+      pc.playAudio();
+    }
 
-//    }
+    //사람
+    pp = new PlayerPerson(globalContext);
+    if(text.substring(0,6).equals("person")&&num<0){
+      Log.e("TEXT", "person! watch out!");
+      num++;
+      pp.playAudio();
+    }
+
+    //기둥
+    ph = new PlayerHydrant(globalContext);
+    if(text.substring(0,4).equals("fire")&&num<0){
+      Log.e("TEXT", "fire hydrant! watch out!");
+      num++;
+      ph.playAudio();
+    }
 
     float width = exteriorPaint.measureText(text);
     float textSize = exteriorPaint.getTextSize();
