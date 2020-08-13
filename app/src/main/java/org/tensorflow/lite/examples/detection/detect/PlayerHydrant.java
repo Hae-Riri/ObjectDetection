@@ -14,7 +14,7 @@ public class PlayerHydrant {
 
     public PlayerHydrant(Context context){
         mContext = context;
-        mMediaPlayer = MediaPlayer.create(mContext, R.raw.laptop);
+        mMediaPlayer = MediaPlayer.create(mContext, R.raw.firedyrant);
         mAudioManager=(AudioManager)mContext.getSystemService(Context.AUDIO_SERVICE);
     }
     public void playAudio(){
