@@ -29,6 +29,7 @@ import android.util.Log;
 import org.tensorflow.lite.examples.detection.CameraActivity;
 import org.tensorflow.lite.examples.detection.detect.PlayerCar;
 import org.tensorflow.lite.examples.detection.detect.PlayerHydrant;
+import org.tensorflow.lite.examples.detection.detect.PlayerObject;
 import org.tensorflow.lite.examples.detection.detect.PlayerPerson;
 import org.tensorflow.lite.examples.detection.sos.ObjectPlayer;
 
@@ -41,13 +42,12 @@ public class BorderedText{
   private final Paint exteriorPaint;
 
   private final float textSize;
-  public String str;
-  private TextToSpeech tts;
 
   public ObjectPlayer sp;
   public PlayerCar pc;
   public PlayerHydrant ph;
   public PlayerPerson pp;
+  public PlayerObject po;
 
 
   /**
@@ -102,6 +102,9 @@ public class BorderedText{
   int num_car = -1;
   int num_fire = -1;
   int num_person=-1;
+  int num_object1 = -1;
+  int num_object2 = -1;
+  int num_object3 = -1;
 
   public void drawText(
       final Canvas canvas, final float posX, final float posY, String text, Paint bgPaint) {
@@ -110,12 +113,12 @@ public class BorderedText{
 
     sp = new ObjectPlayer(globalContext);
     //특정 객체 인식부분
-    if(text.substring(0,6).equals("laptop") && num<0){
-      Log.e("TEXT","Watch Out!");
-      str = "노트북";
-      num++;
-      sp.playAudio(); //잠시 테스트때문에 얘만 주석처리
-    }
+//    if(text.substring(0,6).equals("laptop") && num<0){
+//      Log.e("TEXT","Watch Out!");
+//      str = "노트북";
+//      num++;
+//      sp.playAudio(); //잠시 테스트때문에 얘만 주석처리
+//    }
 
     //자동차
     pc = new PlayerCar(globalContext);
@@ -140,6 +143,16 @@ public class BorderedText{
       num_fire++;
       ph.playAudio();
     }
+
+    //그 외
+    po = new PlayerObject(globalContext);
+
+    if(text.substring(0,4).equals("fire")&&num_fire<0){
+      Log.e("TEXT", "something! watch out!");
+      num_object1++;
+      po.playAudio();
+    }
+
 
     float width = exteriorPaint.measureText(text);
     float textSize = exteriorPaint.getTextSize();

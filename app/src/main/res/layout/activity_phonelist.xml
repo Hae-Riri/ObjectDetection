@@ -45,10 +45,12 @@
         android:layout_height="141px"
         android:layout_marginBottom="81dp"
         android:backgroundTint="#97DBD8"
-        android:textColor="@color/background_color"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        android:text="+"
+        android:textSize="70dp"
         android:background="@drawable/add_button_border"/>
 
 
